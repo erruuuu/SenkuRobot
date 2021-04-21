@@ -59,9 +59,9 @@ async def download_video(v_url):
     try:
        url = q[0]['link']
     except:
-    	return await rkp.edit("`failed to find`")
+    	return await rkp.edit("`Gagal menemukan`")
     type = "audio"
-    await rkp.edit("`Preparing to download...`")
+    await rkp.edit("`Persiapan untuk mendownload...`")
     if type == "audio":
         opts = {
             'format':
@@ -93,7 +93,7 @@ async def download_video(v_url):
         video = False
         song = True    
     try:
-        await rkp.edit("`Fetching data, please wait..`")
+        await rkp.edit("`Mengambil data, harap tunggu..`")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
@@ -127,7 +127,7 @@ async def download_video(v_url):
         return
     c_time = time.time()
     if song:
-        await rkp.edit(f"`Preparing to upload song:`\
+        await rkp.edit(f"`Bersiap mengunggah lagu:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
