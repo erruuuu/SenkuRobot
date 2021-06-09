@@ -1033,7 +1033,7 @@ NEW_MEM_HANDLER = MessageHandler(Filters.status_update.new_chat_members,
                                  new_member)
 LEFT_MEM_HANDLER = MessageHandler(Filters.status_update.left_chat_member,
                                   left_member)
-WELC_PREF_HANDLER = CommandHandler("welcome", welcome, filters=filters.chat_type.group)
+WELC_PREF_HANDLER = CommandHandler("welcome", welcome, filters=Filters.status_update.new_chat_members)
 GOODBYE_PREF_HANDLER = CommandHandler("goodbye", goodbye, filters=filters.chat_type.group)
 SET_WELCOME = CommandHandler("setwelcome", set_welcome, filters=filters.chat_type.group)
 SET_GOODBYE = CommandHandler("setgoodbye", set_goodbye, filters=filters.chat_type.group)
