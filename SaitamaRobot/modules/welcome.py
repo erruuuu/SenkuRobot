@@ -1033,20 +1033,20 @@ NEW_MEM_HANDLER = MessageHandler(Filters.status_update.new_chat_members,
                                  new_member)
 LEFT_MEM_HANDLER = MessageHandler(Filters.status_update.left_chat_member,
                                   left_member)
-WELC_PREF_HANDLER = CommandHandler("welcome", welcome, filters=Filters.group, async=True)
-GOODBYE_PREF_HANDLER = CommandHandler("goodbye", goodbye, filters=Filters.group, async=True)
-SET_WELCOME = CommandHandler("setwelcome", set_welcome, filters=Filters.group, async=True)
-SET_GOODBYE = CommandHandler("setgoodbye", set_goodbye, filters=Filters.group, async=True)
+WELC_PREF_HANDLER = CommandHandler("welcome", welcome, filters=Filters.group, run_async=True)
+GOODBYE_PREF_HANDLER = CommandHandler("goodbye", goodbye, filters=Filters.group, run_async=True)
+SET_WELCOME = CommandHandler("setwelcome", set_welcome, filters=Filters.group, run_async=True)
+SET_GOODBYE = CommandHandler("setgoodbye", set_goodbye, filters=Filters.group, run_async=True)
 RESET_WELCOME = CommandHandler(
-    "resetwelcome", reset_welcome, filters=Filters.group, async=True)
+    "resetwelcome", reset_welcome, filters=Filters.group, run_async=True)
 RESET_GOODBYE = CommandHandler(
-    "resetgoodbye", reset_goodbye, filters=Filters.group, async=True)
+    "resetgoodbye", reset_goodbye, filters=Filters.group, run_async=True)
 WELCOMEMUTE_HANDLER = CommandHandler(
-    "welcomemute", welcomemute, filters=Filters.group, async=True)
+    "welcomemute", welcomemute, filters=Filters.group, run_async=True)
 CLEAN_SERVICE_HANDLER = CommandHandler(
-    "cleanservice", cleanservice, filters=Filters.group, async=True)
+    "cleanservice", cleanservice, filters=Filters.group, run_async=True)
 CLEAN_WELCOME = CommandHandler(
-    "cleanwelcome", clean_welcome, filters=Filters.group, async=True)
+    "cleanwelcome", clean_welcome, filters=Filters.group, run_async=True)
 WELCOME_HELP = CommandHandler("welcomehelp", welcome_help)
 WELCOME_MUTE_HELP = CommandHandler("welcomemutehelp", welcome_mute_help)
 BUTTON_VERIFY_HANDLER = CallbackQueryHandler(user_button, pattern=r"user_join_")
